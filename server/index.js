@@ -19,14 +19,23 @@ const getDataset = async () => {
 	});
 };
 
+// Param:
+// - q: search query, coming from the front end
 app.post('/bookSearch', async (req, res) => {
-	console.log(req.body);
-	let data;
+	console.log(req.body.q);
+	let dataset;
+	let found = [];
 	try {
-		data = await getDataset();
+		dataset = await getDataset();
+		for (let i = 0; i < dataset.length; i++) {
+			if (dataset[i].title.toLowerCase().includes(req.body.q.toLowerCase())) {
+				found.push(dataset[i]);
+			}
+		}
 	} catch (err) {
 		console.log(err);
 	}
+	res.json({ searchTitle: req.body.q, data: found });
 });
 
 app.get('/', (req, res) => {
