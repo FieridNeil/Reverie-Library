@@ -1,4 +1,5 @@
 import React from "react";
+import NavBar from "../NavBar/NavBar";
 
 const MasterLayout = ({ children }) => {
 	return (
@@ -13,6 +14,7 @@ const MasterLayout = ({ children }) => {
 				minHeight: "100vh",
 			}}
 		>
+			<NavBar />
 			{children}
 		</div>
 	);
