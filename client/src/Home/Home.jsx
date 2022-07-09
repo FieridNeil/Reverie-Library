@@ -182,7 +182,7 @@ const Home = () => {
 	const [searchString, setSearchString] = useState("");
 	const [searchResult, setSearchResult] = useState();
 	const [state, setState] = useState({});
-
+	console.log(process.env.REACT_APP_API_URL);
 	const FormSubmitHandler = (e) => {
 		e.preventDefault();
 		if (searchString === "") return;
