@@ -200,7 +200,7 @@ const Home = () => {
 				console.log("Failed to send book search request to server", err)
 			);
 
-		setSearchString("");
+		// setSearchString("");
 	};
 
 	return (
@@ -215,9 +215,6 @@ const Home = () => {
 					backgroundColor: "#ff9900dd",
 				}}
 			>
-				<center>
-					<h1>Welcome to Reverie Library</h1>
-				</center>
 				<div style={{ margin: "0px auto" }}>
 					<Form
 						style={{ display: "flex" }}
