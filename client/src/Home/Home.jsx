@@ -186,12 +186,12 @@ const Home = () => {
 	const FormSubmitHandler = (e) => {
 		e.preventDefault();
 		if (searchString === "") return;
-
-		fetch(`http://localhost:4001/bookSearch`, {
-			method: "POST",
-			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify({ q: searchString }),
-		})
+		process.env
+			.fetch(`{process.env.REACT_APP_API_URL}/bookSearch`, {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify({ q: searchString }),
+			})
 			.then((result) => result.json())
 			.then((result) => {
 				setSearchResult(result);
