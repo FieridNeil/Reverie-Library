@@ -187,7 +187,7 @@ const Home = () => {
 		e.preventDefault();
 		if (searchString === "") return;
 		process.env
-			.fetch(`{process.env.REACT_APP_API_URL}/bookSearch`, {
+			.fetch(`${process.env.REACT_APP_API_URL}/bookSearch`, {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({ q: searchString }),
